@@ -1,10 +1,10 @@
+"use client";
 import React from "react";
 import { currencyFormatter } from "@/lib/utils";
-import { getAllData } from "@/lib/api";
+import { getAllIncomeData } from "@/lib/api";
 
 export default async function IncomeList() {
-	const incomeData = await getAllData();
-	console.log(incomeData);
+	const incomeData = await getAllIncomeData();
 	return (
 		<div className="overflow-x-auto">
 			<table className="table">
@@ -17,9 +17,9 @@ export default async function IncomeList() {
 					</tr>
 				</thead>
 				<tbody>
-					{incomeData.map((income) => (
+					{incomeData.map((income, index) => (
 						<tr key={income.id} className="hover:bg-bgColor/50">
-							<th>{income.id}</th>
+							<th>{index + 1}</th>
 							<td>{income.description}</td>
 							<td>{currencyFormatter(income.amount)}</td>
 						</tr>

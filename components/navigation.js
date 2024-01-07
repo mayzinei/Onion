@@ -1,4 +1,3 @@
-"use client";
 import { TfiStatsUp } from "react-icons/tfi";
 
 export default function Navigation() {

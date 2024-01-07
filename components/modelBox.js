@@ -11,7 +11,7 @@ export default function ModelBox({ show, onClose, children }) {
 			<div className="container max-w-2xl mx-auto h-[80vh] bg-grayColor/20 backdrop-blur-md rounded-lg">
 				<div className="flex justify-end">
 					<button
-						onClick={() => onClose(false)}
+						onClick={() => onClose(true)}
 						className="px-3.5 py-2 bg-bgColor/50 rounded-full font-bold"
 					>
 						X

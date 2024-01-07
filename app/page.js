@@ -5,6 +5,8 @@ import ExpenseItems from "@/components/expenseItems";
 import Stats from "@/components/stats";
 import ModelBox from "@/components/modelBox";
 import IncomeList from "@/components/incomeList";
+import { addNewIncome } from "@/lib/api";
+import { v4 as uuidv4 } from "uuid";
 const DammyData = [
 	{ color: "#EE7214", title: "Clothing", amount: "6000" },
 	{ color: "#527853", title: "Skin Care", amount: "40000" },
@@ -17,16 +19,14 @@ export default function Home() {
 	const [incomeModelOpen, setIncomeModelOpen] = useState(true);
 	const descriptionRef = useRef();
 	const amountRef = useRef();
-	const incomeHandler = (e) => {
+	const incomeHandler = async (e) => {
 		e.preventDefault();
-
-		const newIncomes = {
+		await addNewIncome({
+			id: uuidv4(),
 			description: descriptionRef.current.value,
 			amount: amountRef.current.value,
-			createdAt: new Date(),
-		};
+		});
 
-		console.log(newIncomes);
 		descriptionRef.current.value = "";
 		amountRef.current.value = "";
 	};
