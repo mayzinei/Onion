@@ -4,6 +4,7 @@ import { currencyFormatter } from "@/lib/utils";
 import ExpenseItems from "@/components/expenseItems";
 import Stats from "@/components/stats";
 import ModelBox from "@/components/modelBox";
+import IncomeList from "@/components/incomeList";
 const DammyData = [
 	{ color: "#EE7214", title: "Clothing", amount: "6000" },
 	{ color: "#527853", title: "Skin Care", amount: "40000" },
@@ -26,6 +27,8 @@ export default function Home() {
 		};
 
 		console.log(newIncomes);
+		descriptionRef.current.value = "";
+		amountRef.current.value = "";
 	};
 	return (
 		<>
@@ -67,6 +70,7 @@ export default function Home() {
 						</button>
 					</div>
 				</form>
+				<IncomeList />
 			</ModelBox>
 
 			<main className="container max-w-screen-md mx-auto space-y-4 ">

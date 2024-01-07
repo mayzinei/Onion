@@ -1,0 +1,19 @@
+{
+	"income": [
+		{
+			"id": "1",
+			"description": "Salary",
+			"amount": "20000"
+		},
+		{
+			"id": "2",
+			"description": "Bonus",
+			"amount": "50000"
+		},
+		{
+			"id": "3",
+			"description": "Income",
+			"amount": "60000"
+		}
+	]
+}
